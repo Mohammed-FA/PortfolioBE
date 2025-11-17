@@ -1,0 +1,25 @@
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\bin\Debug\net8.0\Project.Domain.deps.json
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\bin\Debug\net8.0\Project.Domain.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\bin\Debug\net8.0\Project.Domain.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.csproj.AssemblyReference.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.AssemblyInfoInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.AssemblyInfo.cs
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.csproj.CoreCompileInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\refint\Project.Domain.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll
+D:\GitHubWork\Freelancer_api\Project.Domain\bin\Debug\net8.0\Project.Domain.deps.json
+D:\GitHubWork\Freelancer_api\Project.Domain\bin\Debug\net8.0\Project.Domain.dll
+D:\GitHubWork\Freelancer_api\Project.Domain\bin\Debug\net8.0\Project.Domain.pdb
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.csproj.AssemblyReference.cache
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.AssemblyInfoInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.AssemblyInfo.cs
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.csproj.CoreCompileInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.sourcelink.json
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.dll
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\refint\Project.Domain.dll
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
+D:\GitHubWork\Freelancer_api\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll

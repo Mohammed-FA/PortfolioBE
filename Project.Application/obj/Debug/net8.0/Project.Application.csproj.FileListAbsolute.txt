@@ -1,0 +1,31 @@
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\bin\Debug\net8.0\Project.Application.deps.json
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\bin\Debug\net8.0\Project.Application.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\bin\Debug\net8.0\Project.Application.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\bin\Debug\net8.0\Project.Domain.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\bin\Debug\net8.0\Project.Domain.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.csproj.AssemblyReference.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfoInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfo.cs
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.csproj.CoreCompileInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project..E365C10A.Up2Date
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\refint\Project.Application.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\Project.Application.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll
+D:\GitHubWork\Freelancer_api\Project.Application\bin\Debug\net8.0\Project.Application.deps.json
+D:\GitHubWork\Freelancer_api\Project.Application\bin\Debug\net8.0\Project.Application.dll
+D:\GitHubWork\Freelancer_api\Project.Application\bin\Debug\net8.0\Project.Application.pdb
+D:\GitHubWork\Freelancer_api\Project.Application\bin\Debug\net8.0\Project.Domain.dll
+D:\GitHubWork\Freelancer_api\Project.Application\bin\Debug\net8.0\Project.Domain.pdb
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.csproj.AssemblyReference.cache
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfoInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfo.cs
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.csproj.CoreCompileInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.sourcelink.json
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project..E365C10A.Up2Date
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.dll
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\refint\Project.Application.dll
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\Project.Application.pdb
+D:\GitHubWork\Freelancer_api\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll

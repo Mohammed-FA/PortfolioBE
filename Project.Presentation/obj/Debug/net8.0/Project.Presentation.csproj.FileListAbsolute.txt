@@ -1,0 +1,25 @@
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\bin\Debug\net8.0\Project.Presentation.deps.json
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\bin\Debug\net8.0\Project.Presentation.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\bin\Debug\net8.0\Project.Presentation.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.AssemblyReference.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfoInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfo.cs
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.CoreCompileInputs.cache
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\refint\Project.Presentation.dll
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\Project.Presentation.pdb
+D:\GTC\الفصل الرابع\api\CleanTepm\Project.Presentation\obj\Debug\net8.0\ref\Project.Presentation.dll
+D:\GitHubWork\Freelancer_api\Project.Presentation\bin\Debug\net8.0\Project.Presentation.deps.json
+D:\GitHubWork\Freelancer_api\Project.Presentation\bin\Debug\net8.0\Project.Presentation.dll
+D:\GitHubWork\Freelancer_api\Project.Presentation\bin\Debug\net8.0\Project.Presentation.pdb
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.AssemblyReference.cache
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfoInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfo.cs
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.CoreCompileInputs.cache
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.sourcelink.json
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.dll
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\refint\Project.Presentation.dll
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.pdb
+D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\ref\Project.Presentation.dll

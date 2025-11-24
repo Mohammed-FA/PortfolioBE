@@ -14,7 +14,7 @@ namespace Project.Infrastructure
               .Build();
 
             var builder = new DbContextOptionsBuilder<AppDbContext>();
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString("publicConnectionString");
 
             builder.UseSqlServer(connectionString);
 

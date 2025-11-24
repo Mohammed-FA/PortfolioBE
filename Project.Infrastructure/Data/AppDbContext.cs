@@ -9,5 +9,8 @@ namespace Project.Infrastructure.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        public DbSet<Websites> Websites { get; set; }
+        public DbSet<Page> Pages { get; set; }
+        public DbSet<Sections> Sections { get; set; }
     }
 }

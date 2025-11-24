@@ -10,3 +10,16 @@ D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Release\net8.0\P
 D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Release\net8.0\refint\Project.Domain.dll
 D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Release\net8.0\Project.Domain.pdb
 D:\GTC\الفصل الرابع\api\CleanTepm\Project.Domain\obj\Release\net8.0\ref\Project.Domain.dll
+D:\GitHubWork\PortfolioBE\Project.Domain\bin\Release\net8.0\Project.Domain.deps.json
+D:\GitHubWork\PortfolioBE\Project.Domain\bin\Release\net8.0\Project.Domain.dll
+D:\GitHubWork\PortfolioBE\Project.Domain\bin\Release\net8.0\Project.Domain.pdb
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.csproj.AssemblyReference.cache
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.AssemblyInfoInputs.cache
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.AssemblyInfo.cs
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.csproj.CoreCompileInputs.cache
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.sourcelink.json
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.dll
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\refint\Project.Domain.dll
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\Project.Domain.pdb
+D:\GitHubWork\PortfolioBE\Project.Domain\obj\Release\net8.0\ref\Project.Domain.dll

@@ -1,8 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using project.Services;
+using Project.Application.Dto;
 using Project.Application.ViweModel;
 using Project.Domain.Entities;
 
@@ -13,12 +16,17 @@ namespace CleanTepm.Controllers
     public class AccountController : ControllerBase
     {
         private readonly UserManager<UserModel> _userManager;
+        private readonly EmailSenderService _emailSender;
+        private readonly IMapper _mapper;
         private readonly SignInManager<UserModel> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment env;
-        public AccountController(UserManager<UserModel> userManager, SignInManager<UserModel> signInManager, IConfiguration configuration, IWebHostEnvironment env)
+        public AccountController(EmailSenderService emailSender, UserManager<UserModel> userManager, IMapper mapper, SignInManager<UserModel> signInManager, IConfiguration configuration, IWebHostEnvironment env)
         {
+            _emailSender = emailSender;
+
             _userManager = userManager;
+            _mapper = mapper;
             _signInManager = signInManager;
             _configuration = configuration;
             this.env = env;
@@ -29,8 +37,8 @@ namespace CleanTepm.Controllers
         {
             if (ModelState.IsValid)
             {
-                var ValidateEmail = _userManager.FindByEmailAsync(model.Email!);
-                if (ValidateEmail == null)
+                var ValidateEmail = await _userManager.FindByEmailAsync(model.Email!);
+                if (ValidateEmail != null)
                 {
                     return BadRequest($"The Email Is token {model.Email}");
                 }
@@ -71,10 +79,18 @@ namespace CleanTepm.Controllers
                 var results = await _userManager.CreateAsync(user, model.Password!);
                 if (results.Succeeded)
                 {
-                    var r = await _userManager.AddToRoleAsync(user, "employee");
+                    var r = await _userManager.AddToRoleAsync(user, "User");
                     if (r.Succeeded)
                     {
-                        return Ok(new { Name = model.FullName, Email = model.Email, Imageurl = user.ImageUrl, token = GenerateToken(user) });
+                        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        var confirmationLink = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/ConfirmEmail?email={user.Email}&token={Uri.EscapeDataString(token)}";
+                        var subject = "Confirm your email";
+                        var message = $"Please confirm your account by clicking <a href='{confirmationLink}'>here</a>";
+
+                        await _emailSender.SendEmailAsync(user.Email!, subject, message);
+
+                        return Ok("Confirm The Email");
+
                     }
                     return BadRequest("The Role Not Exsists");
                 }
@@ -87,6 +103,26 @@ namespace CleanTepm.Controllers
             return BadRequest(ModelState);
         }
 
+        [HttpGet("/ConfirmEmail")]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string email, [FromQuery] string token)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return BadRequest("Invalid email address.");
+            }
+
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            string baseurl = _configuration.GetSection("url:fronturl").Value!;
+            if (result.Succeeded)
+            {
+                var token1 = await GenerateToken(user);
+                var redirectUrl = $"{baseurl}/signin";
+                return Redirect(redirectUrl);
+            }
+
+            return BadRequest("Email confirmation failed.");
+        }
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginVM model)
         {
@@ -96,16 +132,65 @@ namespace CleanTepm.Controllers
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user != null)
                 {
+                    if (!user.EmailConfirmed)
+                    {
+                        return BadRequest("Email is not confirmed.");
+                    }
                     var results = await _signInManager.PasswordSignInAsync(user, model.Password!, model.Rememberme ?? false, false);
                     if (results.Succeeded)
                     {
-                        return Ok(new { Email = model.Email, token = GenerateToken(user) });
+                        var userDto = _mapper.Map<UserDto>(user);
+                        userDto.token = GenerateToken(user).Result;
+                        return Ok(userDto);
                     }
                 }
                 return BadRequest("Error in Email or Password");
 
             }
             return BadRequest(ModelState);
+        }
+
+        [HttpPost("ForgetPassword")]
+        public async Task<IActionResult> ForgetPassword([FromBody] string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return BadRequest("Invalid Email Address");
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var resetLink = $"{_configuration.GetSection("url:fronturl").Value}/verify?email={email}&token={Uri.EscapeDataString(token)}";
+
+            var subject = "Reset Your Password";
+            var message = $"Click the link to reset your password: <a href='{resetLink}'>Reset Password</a>";
+
+            await _emailSender.SendEmailAsync(email, subject, message);
+
+            return Ok("Reset password link has been sent to your email.");
+        }
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordViewModel model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return BadRequest("User not found");
+            }
+
+            if (model.Password != model.ConfirmPassword)
+            {
+                return BadRequest("Passwords do not match");
+            }
+
+            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if (result.Succeeded)
+            {
+                return Ok("Password has been reset successfully");
+            }
+
+            return BadRequest(result.Errors);
         }
 
         private async Task<string> GenerateToken(UserModel user)

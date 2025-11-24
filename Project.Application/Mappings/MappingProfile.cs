@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Project.Application.Dto;
+using Project.Domain.Entities;
 
 namespace Project.Application.Mappings
 {
@@ -6,7 +8,7 @@ namespace Project.Application.Mappings
     {
         public MappingProfile()
         {
-
+            CreateMap<UserModel, UserDto>();
         }
     }
 }

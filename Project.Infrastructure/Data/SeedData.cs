@@ -43,6 +43,7 @@ namespace Project.Infrastructure.Data
                     Role = UserType.Admin,
                     Email = EmailAdmin,
                     FullName = "admin admin",
+                    EmailConfirmed = true,
 
                 };
 
@@ -66,6 +67,8 @@ namespace Project.Infrastructure.Data
                     Email = UserEmail,
                     Role = UserType.User,
                     FullName = "User User",
+                    EmailConfirmed = true,
+
 
                 };
                 var results = await userManager.CreateAsync(UserAccount, UserPass);

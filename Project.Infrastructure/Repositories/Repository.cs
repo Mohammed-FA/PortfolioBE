@@ -19,10 +19,10 @@ namespace Project.Infrastructure.Repositories
      Expression<Func<T, bool>>? predicate = null,
      Func<IQueryable<T>, IQueryable<T>>? include = null)
         {
-            IQueryable<T> query = _dbSet; // لازم يكون IQueryable<T>
+            IQueryable<T> query = _dbSet;
 
             if (include != null)
-                query = include(query); // هنا بيمشي include(q => q.Include(...))
+                query = include(query);
 
             if (predicate != null)
                 query = query.Where(predicate);

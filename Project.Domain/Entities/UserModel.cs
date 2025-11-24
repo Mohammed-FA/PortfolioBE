@@ -12,5 +12,9 @@ namespace Project.Domain.Entities
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
         public DateTime? LastLogin { get; set; }
 
+
+
+        public ICollection<Websites>? Websites { get; set; }
+
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using project.Services;
 using Project.api.Hubs;
 using Project.api.Providers;
 using Project.Application.Interfaces;
@@ -42,6 +43,9 @@ namespace CleanTepm
             builder.Services.AddIdentity<UserModel, IdentityRole<long>>
                 (options =>
                         {
+                            options.SignIn.RequireConfirmedEmail = true;
+
+
                             options.Password.RequireDigit = false;
                             options.Password.RequireLowercase = true;
                             options.Password.RequireNonAlphanumeric = false;
@@ -91,7 +95,7 @@ namespace CleanTepm
             builder.Services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("publicConnectionString")));
 
 
             builder.Services.AddAuthorization(options =>
@@ -163,6 +167,7 @@ namespace CleanTepm
 
                 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+                services.AddScoped<EmailSenderService>();
 
 
 

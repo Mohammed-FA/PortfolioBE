@@ -23,3 +23,16 @@ D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Prese
 D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\refint\Project.Presentation.dll
 D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\Project.Presentation.pdb
 D:\GitHubWork\Freelancer_api\Project.Presentation\obj\Debug\net8.0\ref\Project.Presentation.dll
+D:\GitHubWork\PortfolioBE\Project.Presentation\bin\Debug\net8.0\Project.Presentation.deps.json
+D:\GitHubWork\PortfolioBE\Project.Presentation\bin\Debug\net8.0\Project.Presentation.dll
+D:\GitHubWork\PortfolioBE\Project.Presentation\bin\Debug\net8.0\Project.Presentation.pdb
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.AssemblyReference.cache
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfoInputs.cache
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfo.cs
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.CoreCompileInputs.cache
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.sourcelink.json
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.dll
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\refint\Project.Presentation.dll
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\Project.Presentation.pdb
+D:\GitHubWork\PortfolioBE\Project.Presentation\obj\Debug\net8.0\ref\Project.Presentation.dll

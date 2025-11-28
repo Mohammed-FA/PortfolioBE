@@ -3,9 +3,12 @@ using Project.Domain.Entities.Common;
 
 namespace Project.Domain.Entities
 {
-    public class Page : BaseEntity
+    public class PageModel : BaseEntity
     {
 
+
+
+        public string Name { get; set; }
         public int WebsitesId { get; set; }
 
 
@@ -14,6 +17,6 @@ namespace Project.Domain.Entities
         public Websites? websites { get; set; }
 
 
-        public ICollection<Sections>? Sections { get; set; }
+        public ICollection<SectionModel>? Sections { get; set; }
     }
 }

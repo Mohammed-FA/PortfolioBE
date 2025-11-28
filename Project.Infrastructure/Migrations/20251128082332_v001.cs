@@ -192,6 +192,7 @@ namespace Project.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WebsitesId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -214,7 +215,10 @@ namespace Project.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Pageid = table.Column<int>(type: "int", nullable: false),
+                    PageId = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Width = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Height = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -223,9 +227,102 @@ namespace Project.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Sections", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Sections_Pages_Pageid",
-                        column: x => x.Pageid,
+                        name: "FK_Sections_Pages_PageId",
+                        column: x => x.PageId,
                         principalTable: "Pages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LayoutSections",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SectionId = table.Column<int>(type: "int", nullable: false),
+                    Variant = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LayoutSections", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LayoutSections_Sections_SectionId",
+                        column: x => x.SectionId,
+                        principalTable: "Sections",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LayoutSlots",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LayoutSectionId = table.Column<int>(type: "int", nullable: false),
+                    SlotName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LayoutSlots", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LayoutSlots_LayoutSections_LayoutSectionId",
+                        column: x => x.LayoutSectionId,
+                        principalTable: "LayoutSections",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Components",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SlotId = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Components", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Components_LayoutSlots_SlotId",
+                        column: x => x.SlotId,
+                        principalTable: "LayoutSlots",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ComponentProps",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ComponentId = table.Column<int>(type: "int", nullable: false),
+                    Key = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ComponentProps", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ComponentProps_Components_ComponentId",
+                        column: x => x.ComponentId,
+                        principalTable: "Components",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -270,14 +367,36 @@ namespace Project.Infrastructure.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ComponentProps_ComponentId_Key",
+                table: "ComponentProps",
+                columns: new[] { "ComponentId", "Key" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Components_SlotId",
+                table: "Components",
+                column: "SlotId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LayoutSections_SectionId",
+                table: "LayoutSections",
+                column: "SectionId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LayoutSlots_LayoutSectionId",
+                table: "LayoutSlots",
+                column: "LayoutSectionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pages_WebsitesId",
                 table: "Pages",
                 column: "WebsitesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sections_Pageid",
+                name: "IX_Sections_PageId",
                 table: "Sections",
-                column: "Pageid");
+                column: "PageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Websites_UserId",
@@ -304,10 +423,22 @@ namespace Project.Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Sections");
+                name: "ComponentProps");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Components");
+
+            migrationBuilder.DropTable(
+                name: "LayoutSlots");
+
+            migrationBuilder.DropTable(
+                name: "LayoutSections");
+
+            migrationBuilder.DropTable(
+                name: "Sections");
 
             migrationBuilder.DropTable(
                 name: "Pages");

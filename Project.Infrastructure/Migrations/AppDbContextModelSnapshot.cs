@@ -155,7 +155,7 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.Page", b =>
+            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -168,6 +168,139 @@ namespace Project.Infrastructure.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<int>("SlotId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SlotId");
+
+                    b.ToTable("Components");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.ComponentProp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ComponentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComponentId", "Key")
+                        .IsUnique();
+
+                    b.ToTable("ComponentProps");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Variant")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SectionId")
+                        .IsUnique();
+
+                    b.ToTable("LayoutSections");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("LayoutSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SlotName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LayoutSectionId");
+
+                    b.ToTable("LayoutSlots");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -182,7 +315,7 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("Pages");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.Sections", b =>
+            modelBuilder.Entity("Project.Domain.Entities.SectionModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,18 +326,28 @@ namespace Project.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Height")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Pageid")
+                    b.Property<int>("PageId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Width")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Pageid");
+                    b.HasIndex("PageId");
 
                     b.ToTable("Sections");
                 });
@@ -374,7 +517,51 @@ namespace Project.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.Page", b =>
+            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.LayoutSlot", "Slot")
+                        .WithMany("Components")
+                        .HasForeignKey("SlotId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Slot");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.ComponentProp", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.ComponentModel", "Component")
+                        .WithMany("Props")
+                        .HasForeignKey("ComponentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Component");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.SectionModel", "Section")
+                        .WithOne("Layout")
+                        .HasForeignKey("Project.Domain.Entities.LayoutSection", "SectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Section");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.LayoutSection", "LayoutSection")
+                        .WithMany("Slots")
+                        .HasForeignKey("LayoutSectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LayoutSection");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
                 {
                     b.HasOne("Project.Domain.Entities.Websites", "websites")
                         .WithMany("Pages")
@@ -385,11 +572,11 @@ namespace Project.Infrastructure.Migrations
                     b.Navigation("websites");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.Sections", b =>
+            modelBuilder.Entity("Project.Domain.Entities.SectionModel", b =>
                 {
-                    b.HasOne("Project.Domain.Entities.Page", "Page")
+                    b.HasOne("Project.Domain.Entities.PageModel", "Page")
                         .WithMany("Sections")
-                        .HasForeignKey("Pageid")
+                        .HasForeignKey("PageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -407,9 +594,29 @@ namespace Project.Infrastructure.Migrations
                     b.Navigation("UserModel");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.Page", b =>
+            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
+                {
+                    b.Navigation("Props");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+                {
+                    b.Navigation("Slots");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
+                {
+                    b.Navigation("Components");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
                 {
                     b.Navigation("Sections");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.SectionModel", b =>
+                {
+                    b.Navigation("Layout");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.UserModel", b =>

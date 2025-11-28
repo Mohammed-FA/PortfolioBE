@@ -11,6 +11,6 @@ namespace Project.Domain.Entities
         [ForeignKey(nameof(UserId))]
         public UserModel? UserModel { get; set; }
 
-        public ICollection<Page>? Pages { get; set; }
+        public ICollection<PageModel>? Pages { get; set; }
     }
 }

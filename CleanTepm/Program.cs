@@ -14,6 +14,7 @@ using Project.Application.Mappings;
 using Project.Domain.Entities;
 using Project.Infrastructure.Data;
 using Project.Infrastructure.Repositories;
+using Project.Infrastructure.Services;
 
 namespace CleanTepm
 {
@@ -95,7 +96,7 @@ namespace CleanTepm
             builder.Services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("publicConnectionString")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
             builder.Services.AddAuthorization(options =>
@@ -164,6 +165,10 @@ namespace CleanTepm
             void RegisterApplicationServices(IServiceCollection services)
             {
                 services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>(), typeof(Program));
+
+                builder.Services.AddScoped<IWebsiteService, WebsiteService>();
+                builder.Services.AddScoped<IPageService, PageService>();
+                builder.Services.AddScoped<ISectionService, SectionService>();
 
                 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

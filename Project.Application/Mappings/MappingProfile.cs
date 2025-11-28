@@ -9,6 +9,14 @@ namespace Project.Application.Mappings
         public MappingProfile()
         {
             CreateMap<UserModel, UserDto>();
+
+            CreateMap<Websites, WebsiteDto>().ReverseMap();
+
+            // Page
+            CreateMap<PageModel, PageDto>().ReverseMap();
+
+            // Section
+            CreateMap<SectionModel, SectionDto>().ReverseMap();
         }
     }
 }

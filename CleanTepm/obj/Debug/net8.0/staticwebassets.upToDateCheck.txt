@@ -1,1 +1,4 @@
+wwwroot\images\7d78e1d9-ba5f-455d-8a66-806f01f844be.png
+wwwroot\images\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png
+wwwroot\images\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png
 wwwroot\web.config

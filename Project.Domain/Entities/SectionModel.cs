@@ -1,22 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Project.Domain.Entities.Common;
+﻿using Project.Domain.Entities.Common;
+using Project.Domain.Enum;
 
 namespace Project.Domain.Entities
 {
-    public class SectionModel : BaseEntity
+    public class SectionModel : SectionStyle
     {
+
+        public int Id { get; set; }
         public int PageId { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public LayoutVariant Type { get; set; }
 
-        public string Type { get; set; }
+        public ICollection<Columns>? Columns { get; set; }
 
-        public string? Width { get; set; }
-        public string? Height { get; set; }
-
-        [ForeignKey(nameof(PageId))]
-        public PageModel? Page { get; set; }
-
-        // إذا كانت Layout سيتم تعبئتها
-        public LayoutSection? Layout { get; set; }
 
     }
 }

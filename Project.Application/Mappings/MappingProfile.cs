@@ -8,15 +8,12 @@ namespace Project.Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<UserModel, UserDto>();
+            CreateMap<UserModel, UserDto>()
+                    .ForMember(dest => dest.Imageurl, opt => opt.MapFrom(src => src.ImageUrl))
+                    .ForMember(dest => dest.Websites, opt => opt.MapFrom(src => src.Websites));
 
-            CreateMap<Websites, WebsiteDto>().ReverseMap();
 
-            // Page
-            CreateMap<PageModel, PageDto>().ReverseMap();
-
-            // Section
-            CreateMap<SectionModel, SectionDto>().ReverseMap();
+            CreateMap<Websites, WebsitDto>();
         }
     }
 }

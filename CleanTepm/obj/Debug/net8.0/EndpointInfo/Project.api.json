@@ -189,10 +189,400 @@
           }
         }
       }
+    },
+    "/api/Admin/stats": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/getallusers": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/EditUserInfo": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/AddUser": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/GetUserWebsite/{userId}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Website/upload-slot-image": {
+      "post": {
+        "tags": [
+          "Website"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Website/CreateWebsite": {
+      "post": {
+        "tags": [
+          "Website"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Pages": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PageModel"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Pages": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Website/GetAllByUser": {
+      "get": {
+        "tags": [
+          "Website"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Website/DeleteWebsite/{id}": {
+      "delete": {
+        "tags": [
+          "Website"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Website/GetPage/{websiteurl}/{pageurl}": {
+      "get": {
+        "tags": [
+          "Website"
+        ],
+        "parameters": [
+          {
+            "name": "websiteurl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageurl",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "Columns": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "sectionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slots": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Slots"
+            },
+            "nullable": true
+          },
+          "section": {
+            "$ref": "#/components/schemas/SectionModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComponentType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EditUser": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserType"
+          },
+          "isBlock": {
+            "type": "boolean"
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LayoutVariant": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ListItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "slotsId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slots": {
+            "$ref": "#/components/schemas/Slots"
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginVM": {
         "required": [
           "email"
@@ -216,6 +606,50 @@
         },
         "additionalProperties": false
       },
+      "PageModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "websitesId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "websites": {
+            "$ref": "#/components/schemas/Websites"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SectionModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ResetPasswordViewModel": {
         "type": "object",
         "properties": {
@@ -233,6 +667,812 @@
           },
           "confirmPassword": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SectionModel": {
+        "type": "object",
+        "properties": {
+          "marginMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "paddingMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "padding": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingTop": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingBottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingLeft": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingRight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "margin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginTop": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginBottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginLeft": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginRight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "backgroundColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderRadius": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "boxShadow": {
+            "type": "string",
+            "nullable": true
+          },
+          "border": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderTop": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderBottom": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "borderColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "opacity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fontWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "textAlign": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontFamily": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineHeight": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "letterSpacing": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "textShadow": {
+            "type": "string",
+            "nullable": true
+          },
+          "textDecoration": {
+            "type": "string",
+            "nullable": true
+          },
+          "whiteSpace": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowWrap": {
+            "type": "string",
+            "nullable": true
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minHeight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxHeight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "display": {
+            "type": "string",
+            "nullable": true
+          },
+          "justifyContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "alignItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "alignContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "gap": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flexDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "justifyItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflow": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowX": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowY": {
+            "type": "string",
+            "nullable": true
+          },
+          "position": {
+            "type": "string",
+            "nullable": true
+          },
+          "top": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "left": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "right": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "zIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "transition": {
+            "type": "string",
+            "nullable": true
+          },
+          "transform": {
+            "type": "string",
+            "nullable": true
+          },
+          "gridTemplateRows": {
+            "type": "string",
+            "nullable": true
+          },
+          "gridTemplateColumns": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundRepeat": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundSize": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundPosition": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LayoutVariant"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Columns"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Slots": {
+        "type": "object",
+        "properties": {
+          "marginMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "paddingMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "padding": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingTop": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingBottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingLeft": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paddingRight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "margin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginTop": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginBottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginLeft": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marginRight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "backgroundColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderRadius": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "boxShadow": {
+            "type": "string",
+            "nullable": true
+          },
+          "border": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderTop": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderBottom": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "borderColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "opacity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fontWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "textAlign": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontFamily": {
+            "type": "string",
+            "nullable": true
+          },
+          "fontStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineHeight": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "letterSpacing": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "textShadow": {
+            "type": "string",
+            "nullable": true
+          },
+          "textDecoration": {
+            "type": "string",
+            "nullable": true
+          },
+          "whiteSpace": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowWrap": {
+            "type": "string",
+            "nullable": true
+          },
+          "minWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxWidth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minHeight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxHeight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "display": {
+            "type": "string",
+            "nullable": true
+          },
+          "justifyContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "alignItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "alignContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "gap": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "flexDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "justifyItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflow": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowX": {
+            "type": "string",
+            "nullable": true
+          },
+          "overflowY": {
+            "type": "string",
+            "nullable": true
+          },
+          "position": {
+            "type": "string",
+            "nullable": true
+          },
+          "top": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "left": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "right": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bottom": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "zIndex": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "transition": {
+            "type": "string",
+            "nullable": true
+          },
+          "transform": {
+            "type": "string",
+            "nullable": true
+          },
+          "gridTemplateRows": {
+            "type": "string",
+            "nullable": true
+          },
+          "gridTemplateColumns": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundRepeat": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundSize": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundPosition": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "columnId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/ComponentType"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListItems"
+            },
+            "nullable": true
+          },
+          "columns": {
+            "$ref": "#/components/schemas/Columns"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "concurrencyStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean"
+          },
+          "twoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lockoutEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lockoutEnabled": {
+            "type": "boolean"
+          },
+          "accessFailedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserType"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isBlock": {
+            "type": "boolean"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "loginTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "websites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Websites"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserType": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Websites": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "hostUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublish": {
+            "type": "boolean"
+          },
+          "userModel": {
+            "$ref": "#/components/schemas/UserModel"
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageModel"
+            },
             "nullable": true
           }
         },

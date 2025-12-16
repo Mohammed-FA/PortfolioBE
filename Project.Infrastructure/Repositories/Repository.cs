@@ -16,8 +16,8 @@ namespace Project.Infrastructure.Repositories
             _dbSet = _context.Set<T>();
         }
         public async Task<IEnumerable<T>> GetAllAsync(
-     Expression<Func<T, bool>>? predicate = null,
-     Func<IQueryable<T>, IQueryable<T>>? include = null)
+            Expression<Func<T, bool>>? predicate = null,
+            Func<IQueryable<T>, IQueryable<T>>? include = null)
         {
             IQueryable<T> query = _dbSet;
 

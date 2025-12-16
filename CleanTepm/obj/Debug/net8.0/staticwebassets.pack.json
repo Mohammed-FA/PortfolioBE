@@ -1,6 +1,18 @@
 {
   "Files": [
     {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png",
+      "PackagePath": "staticwebassets\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+      "PackagePath": "staticwebassets\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png",
+      "PackagePath": "staticwebassets\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png"
+    },
+    {
       "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\web.config",
       "PackagePath": "staticwebassets\\web.config"
     },

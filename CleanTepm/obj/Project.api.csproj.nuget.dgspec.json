@@ -32,6 +32,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\GitHubWork\\PortfolioBE\\Project.Application\\Project.Application.csproj": {
+                "projectPath": "D:\\GitHubWork\\PortfolioBE\\Project.Application\\Project.Application.csproj"
+              },
               "D:\\GitHubWork\\PortfolioBE\\Project.Domain\\Project.Domain.csproj": {
                 "projectPath": "D:\\GitHubWork\\PortfolioBE\\Project.Domain\\Project.Domain.csproj"
               },
@@ -240,6 +243,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.19, )"

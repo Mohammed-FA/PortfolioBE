@@ -3,35 +3,32 @@
   "WorkspaceRootPath": "D:\\GitHubWork\\PortfolioBE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46AE0A2B-8AB5-4E62-9082-46C26A7FDC72}|Project.Domain\\Project.Domain.csproj|d:\\githubwork\\portfoliobe\\project.domain\\entities\\slots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AE0A2B-8AB5-4E62-9082-46C26A7FDC72}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\slots.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\controllers\\pagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\controllers\\pagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Migrations\\20251128082332_v001.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project.Infrastructure\\Migrations\\20251128082332_v001.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D94B8E6-6873-4D8E-935A-B646DADBB103}|Project.Application\\Project.Application.csproj|d:\\githubwork\\portfoliobe\\project.application\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D94B8E6-6873-4D8E-935A-B646DADBB103}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\services\\createwebsitserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\services\\createwebsitserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\commentcode\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\commentcode\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,84 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WebsiteController.cs",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
-              "RelativeDocumentMoniker": "CleanTepm\\Controllers\\WebsiteController.cs",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
-              "RelativeToolTip": "CleanTepm\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:23:55.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PageController.cs",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\PageController.cs",
-              "RelativeDocumentMoniker": "CleanTepm\\Controllers\\PageController.cs",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\PageController.cs",
-              "RelativeToolTip": "CleanTepm\\Controllers\\PageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:23:54.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20251128082332_v001.cs",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Migrations\\20251128082332_v001.cs",
-              "RelativeDocumentMoniker": "Project.Infrastructure\\Migrations\\20251128082332_v001.cs",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Migrations\\20251128082332_v001.cs",
-              "RelativeToolTip": "Project.Infrastructure\\Migrations\\20251128082332_v001.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:23:32.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAJYTAAAAAAAAAAAUwJ0TAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-28T08:22:43.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "CleanTepm\\appsettings.Development.json",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.Development.json",
-              "RelativeToolTip": "CleanTepm\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-28T08:22:02.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApplicationDbContextFactory.cs",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\ApplicationDbContextFactory.cs",
-              "RelativeDocumentMoniker": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\ApplicationDbContextFactory.cs",
-              "RelativeToolTip": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:20:54.343Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -137,29 +58,88 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "Slots.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Domain\\Entities\\Slots.cs",
+              "RelativeDocumentMoniker": "Project.Domain\\Entities\\Slots.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Domain\\Entities\\Slots.cs",
+              "RelativeToolTip": "Project.Domain\\Entities\\Slots.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA7wA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:45:51.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Program.cs",
               "RelativeDocumentMoniker": "CleanTepm\\Program.cs",
               "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Program.cs",
               "RelativeToolTip": "CleanTepm\\Program.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAQwGIAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAQwKIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T08:20:48.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-16T09:41:18.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png - PNG [1010x625, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+              "RelativeDocumentMoniker": "CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png - PNG [1010x625, 32 bit, PNG]",
+              "RelativeToolTip": "CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png - PNG [1010x625, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-12-16T09:38:37.891Z",
+              "EditorCaption": " - PNG [1010x625, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebsiteController.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
+              "RelativeDocumentMoniker": "CleanTepm\\Controllers\\WebsiteController.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
+              "RelativeToolTip": "CleanTepm\\Controllers\\WebsiteController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:10:45.536Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json",
-              "RelativeDocumentMoniker": "CleanTepm\\appsettings.json",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json",
-              "RelativeToolTip": "CleanTepm\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-28T08:20:42.833Z",
-              "EditorCaption": ""
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Application\\Dto\\UserDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Dto\\UserDto.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Application\\Dto\\UserDto.cs",
+              "RelativeToolTip": "Project.Application\\Dto\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:10:42.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\CommentCode\\Comment.cs",
+              "RelativeDocumentMoniker": "Project.Infrastructure\\CommentCode\\Comment.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\CommentCode\\Comment.cs",
+              "RelativeToolTip": "Project.Infrastructure\\CommentCode\\Comment.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:09:20.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateWebsitServer.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "RelativeDocumentMoniker": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "RelativeToolTip": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwHsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:07:07.543Z"
             }
           ]
         },

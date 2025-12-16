@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7MtnCSjYvoKvzztAu2q2dfY6GCNPxa4FOvemu9wNHP4=",
+  "Hash": "N1XvubmqUpdWsPkPlXj0L4mPBY1vB5S2dYqeXJUVI/A=",
   "Source": "Project.api",
   "BasePath": "_content/Project.api",
   "Mode": "Default",
@@ -16,6 +16,69 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png",
+      "SourceId": "Project.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "RelativePath": "images/7d78e1d9-ba5f-455d-8a66-806f01f844be#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ktxbknhysd",
+      "Integrity": "+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png"
+    },
+    {
+      "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+      "SourceId": "Project.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "RelativePath": "images/b6345d1f-0f68-49a5-bfa9-bbc771ae0c29#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ktxbknhysd",
+      "Integrity": "+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png"
+    },
+    {
+      "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png",
+      "SourceId": "Project.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "RelativePath": "images/d98ea51a-87e6-4162-9b09-56e4d29bde9c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9km1dk1ld1",
+      "Integrity": "eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png"
+    },
     {
       "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\web.config",
       "SourceId": "Project.api",
@@ -39,6 +102,252 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "images/7d78e1d9-ba5f-455d-8a66-806f01f844be.ktxbknhysd.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:40:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ktxbknhysd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/7d78e1d9-ba5f-455d-8a66-806f01f844be.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA="
+        }
+      ]
+    },
+    {
+      "Route": "images/7d78e1d9-ba5f-455d-8a66-806f01f844be.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\7d78e1d9-ba5f-455d-8a66-806f01f844be.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:40:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA="
+        }
+      ]
+    },
+    {
+      "Route": "images/b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.ktxbknhysd.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:37:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ktxbknhysd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA="
+        }
+      ]
+    },
+    {
+      "Route": "images/b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "53561"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:37:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA="
+        }
+      ]
+    },
+    {
+      "Route": "images/d98ea51a-87e6-4162-9b09-56e4d29bde9c.9km1dk1ld1.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:42:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9km1dk1ld1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/d98ea51a-87e6-4162-9b09-56e4d29bde9c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE="
+        }
+      ]
+    },
+    {
+      "Route": "images/d98ea51a-87e6-4162-9b09-56e4d29bde9c.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 16 Dec 2025 09:42:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE="
+        }
+      ]
+    },
     {
       "Route": "web.00x0q28tr8.config",
       "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\web.config",

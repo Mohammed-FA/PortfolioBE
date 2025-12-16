@@ -6,7 +6,7 @@ namespace Project.Infrastructure.CommentCode
 {
     public class Comment
     {
-        public static async Task<string?> CheckFile(IFormFile imgurl, IConfiguration con, IWebHostEnvironment env, string host)
+        public static async Task<string> CheckFile(IFormFile imgurl, IConfiguration con, IWebHostEnvironment env, string host)
         {
 
             List<string> extention = con.GetSection("uploadFile:allowedFileExtension").Get<List<string>>()!;
@@ -14,13 +14,13 @@ namespace Project.Infrastructure.CommentCode
             string ex = Path.GetExtension(imgurl.FileName);
             if (!extention.Contains(ex.ToLower()))
             {
-                return null;
+                throw new Exception($"File extension '{ex}' is not allowed.");
             }
             int MaxSize = con.GetSection("uploadFile:MaxSize").Get<int>()! * 1024 * 1024;
 
             if (!(MaxSize > imgurl.Length))
             {
-                return null;
+                throw new Exception($"File size {imgurl.Length / (1024 * 1024)}MB exceeds the maximum allowed {MaxSize / (1024 * 1024)}MB.");
             }
 
             string filename = Guid.NewGuid().ToString() + ex;
@@ -32,8 +32,7 @@ namespace Project.Infrastructure.CommentCode
                 await imgurl.CopyToAsync(fs);
             }
 
-
-            return $"http://{host}/{subFile}/{filename}";
+            return $"https://{host}/{subFile}/{filename}";
         }
 
         public static void RemoveFile(string imgurl, IConfiguration con, IWebHostEnvironment env)

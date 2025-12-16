@@ -155,73 +155,7 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("SlotId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SlotId");
-
-                    b.ToTable("Components");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.ComponentProp", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ComponentId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ComponentId", "Key")
-                        .IsUnique();
-
-                    b.ToTable("ComponentProps");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+            modelBuilder.Entity("Project.Domain.Entities.Columns", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -241,19 +175,14 @@ namespace Project.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Variant")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("SectionId")
-                        .IsUnique();
+                    b.HasIndex("SectionId");
 
-                    b.ToTable("LayoutSections");
+                    b.ToTable("Columns");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
+            modelBuilder.Entity("Project.Domain.Entities.ListItems", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -267,21 +196,20 @@ namespace Project.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("LayoutSectionId")
+                    b.Property<int>("SlotsId")
                         .HasColumnType("int");
-
-                    b.Property<string>("SlotName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("label")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("LayoutSectionId");
+                    b.HasIndex("SlotsId");
 
-                    b.ToTable("LayoutSlots");
+                    b.ToTable("ListItems");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
@@ -299,11 +227,13 @@ namespace Project.Infrastructure.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("WebsitesId")
                         .HasColumnType("int");
@@ -323,33 +253,452 @@ namespace Project.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AlignContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AlignItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundRepeat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Border")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderBottom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderRadius")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BorderStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderTop")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Bottom")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BoxShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Height")
+                    b.Property<string>("Cursor")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Display")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FlexDirection")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FontSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FontStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontWeight")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Gap")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GridTemplateColumns")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GridTemplateRows")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Height")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<string>("JustifyContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JustifyItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Left")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LetterSpacing")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("LineHeight")
+                        .HasColumnType("real");
+
+                    b.Property<int?>("Margin")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MarginMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MarginRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginTop")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Opacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Overflow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowWrap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowX")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowY")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Padding")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaddingMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PaddingRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingTop")
+                        .HasColumnType("int");
+
                     b.Property<int>("PageId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
+                    b.Property<int?>("PageModelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Position")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Right")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TextAlign")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextDecoration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Top")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transform")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Transition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Width")
+                    b.Property<string>("WhiteSpace")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Width")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ZIndex")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PageId");
+                    b.HasIndex("PageModelId");
 
                     b.ToTable("Sections");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Slots", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AlignContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AlignItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundRepeat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Border")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderBottom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderRadius")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BorderStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderTop")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Bottom")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BoxShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ColumnId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cursor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Display")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FlexDirection")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FontSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FontStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontWeight")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Gap")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GridTemplateColumns")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GridTemplateRows")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Href")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JustifyContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JustifyItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Label")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Left")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LetterSpacing")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("LineHeight")
+                        .HasColumnType("real");
+
+                    b.Property<int?>("Margin")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MarginMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MarginRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginTop")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Opacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Overflow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowWrap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowX")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowY")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Padding")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaddingMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PaddingRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingTop")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Right")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TextAlign")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextDecoration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Top")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transform")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Transition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WhiteSpace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Width")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ZIndex")
+                        .HasColumnType("int");
+
+                    b.Property<int>("type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColumnId");
+
+                    b.ToTable("Slots");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.UserModel", b =>
@@ -387,14 +736,17 @@ namespace Project.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastLogin")
-                        .HasColumnType("datetime2");
+                    b.Property<bool>("IsBlock")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTime?>("LoginTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -450,8 +802,17 @@ namespace Project.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("HostUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<bool>("IsPublish")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -517,48 +878,26 @@ namespace Project.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
-                {
-                    b.HasOne("Project.Domain.Entities.LayoutSlot", "Slot")
-                        .WithMany("Components")
-                        .HasForeignKey("SlotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Slot");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.ComponentProp", b =>
-                {
-                    b.HasOne("Project.Domain.Entities.ComponentModel", "Component")
-                        .WithMany("Props")
-                        .HasForeignKey("ComponentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Component");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+            modelBuilder.Entity("Project.Domain.Entities.Columns", b =>
                 {
                     b.HasOne("Project.Domain.Entities.SectionModel", "Section")
-                        .WithOne("Layout")
-                        .HasForeignKey("Project.Domain.Entities.LayoutSection", "SectionId")
+                        .WithMany("Columns")
+                        .HasForeignKey("SectionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Section");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
+            modelBuilder.Entity("Project.Domain.Entities.ListItems", b =>
                 {
-                    b.HasOne("Project.Domain.Entities.LayoutSection", "LayoutSection")
-                        .WithMany("Slots")
-                        .HasForeignKey("LayoutSectionId")
+                    b.HasOne("Project.Domain.Entities.Slots", "Slots")
+                        .WithMany("Items")
+                        .HasForeignKey("SlotsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("LayoutSection");
+                    b.Navigation("Slots");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
@@ -574,13 +913,20 @@ namespace Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Project.Domain.Entities.SectionModel", b =>
                 {
-                    b.HasOne("Project.Domain.Entities.PageModel", "Page")
+                    b.HasOne("Project.Domain.Entities.PageModel", null)
                         .WithMany("Sections")
-                        .HasForeignKey("PageId")
+                        .HasForeignKey("PageModelId");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Slots", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.Columns", "columns")
+                        .WithMany("Slots")
+                        .HasForeignKey("ColumnId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Page");
+                    b.Navigation("columns");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.Websites", b =>
@@ -594,19 +940,9 @@ namespace Project.Infrastructure.Migrations
                     b.Navigation("UserModel");
                 });
 
-            modelBuilder.Entity("Project.Domain.Entities.ComponentModel", b =>
-                {
-                    b.Navigation("Props");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSection", b =>
+            modelBuilder.Entity("Project.Domain.Entities.Columns", b =>
                 {
                     b.Navigation("Slots");
-                });
-
-            modelBuilder.Entity("Project.Domain.Entities.LayoutSlot", b =>
-                {
-                    b.Navigation("Components");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.PageModel", b =>
@@ -616,7 +952,12 @@ namespace Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Project.Domain.Entities.SectionModel", b =>
                 {
-                    b.Navigation("Layout");
+                    b.Navigation("Columns");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Slots", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.UserModel", b =>

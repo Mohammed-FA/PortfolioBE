@@ -3,11 +3,13 @@ using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using project.Services;
 using Project.Application.Dto;
 using Project.Application.ViweModel;
 using Project.Domain.Entities;
+using Project.Infrastructure.Data;
 
 namespace CleanTepm.Controllers
 {
@@ -16,15 +18,16 @@ namespace CleanTepm.Controllers
     public class AccountController : ControllerBase
     {
         private readonly UserManager<UserModel> _userManager;
+        private readonly AppDbContext _context;
         private readonly EmailSenderService _emailSender;
         private readonly IMapper _mapper;
         private readonly SignInManager<UserModel> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment env;
-        public AccountController(EmailSenderService emailSender, UserManager<UserModel> userManager, IMapper mapper, SignInManager<UserModel> signInManager, IConfiguration configuration, IWebHostEnvironment env)
+        public AccountController(AppDbContext context, EmailSenderService emailSender, UserManager<UserModel> userManager, IMapper mapper, SignInManager<UserModel> signInManager, IConfiguration configuration, IWebHostEnvironment env)
         {
+            _context = context;
             _emailSender = emailSender;
-
             _userManager = userManager;
             _mapper = mapper;
             _signInManager = signInManager;
@@ -139,6 +142,9 @@ namespace CleanTepm.Controllers
                     var results = await _signInManager.PasswordSignInAsync(user, model.Password!, model.Rememberme ?? false, false);
                     if (results.Succeeded)
                     {
+                        user.LoginTime = DateTime.Now;
+                        _context.Update(user);
+                        await _context.SaveChangesAsync();
                         var userDto = _mapper.Map<UserDto>(user);
                         userDto.token = GenerateToken(user).Result;
                         return Ok(userDto);

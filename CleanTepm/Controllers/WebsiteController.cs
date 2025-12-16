@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Project.Application.Dto;
-using Project.Application.Interfaces;
+using Project.Infrastructure.Services;
 
 namespace Project.api.Controllers
 {
@@ -8,39 +11,94 @@ namespace Project.api.Controllers
     [ApiController]
     public class WebsiteController : ControllerBase
     {
-        private readonly IWebsiteService _service;
+        private readonly CreateWebsitServer _createWebsiteService;
+        private readonly IWebHostEnvironment _environment;
 
-        public WebsiteController(IWebsiteService service)
+        public WebsiteController(CreateWebsitServer createWebsiteService, IWebHostEnvironment environment)
         {
-            _service = service;
+            _createWebsiteService = createWebsiteService;
+            _environment = environment;
         }
 
-        [HttpGet("user/{userId}")]
-        public async Task<IActionResult> GetUserWebsites(long userId)
+        [HttpPost("upload-slot-image")]
+        public async Task<IActionResult> UploadSlotImage(IFormFile file)
         {
-            return Ok(await _service.GetUserWebsitesAsync(userId));
+            try
+            {
+
+                var results = await _createWebsiteService.UploadImge(file, HttpContext.Request.Host.Value);
+                return Ok(new { url = results });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] WebsiteDto dto)
+        [HttpPost("CreateWebsite")]
+        [Authorize]
+        public async Task<IActionResult> CreateWebsite([FromForm] CreateWebsiteRequest request)
         {
-            var id = await _service.CreateAsync(dto);
-            return Ok(new { id });
+            if (request.Pages == null || request.Pages.Count == 0)
+                return BadRequest("The Websit should have at less on page ");
+
+            var email = User.FindFirstValue(ClaimTypes.Email)
+
+            ?? User.FindFirstValue(JwtRegisteredClaimNames.Email);
+            var result = await _createWebsiteService.CreateWebsiteWithPages(
+                request.Name,
+                email!,
+                request.Pages
+            );
+
+            if (!result) return BadRequest("There is somthing be error ");
+
+            return Ok(new { Success = true, Message = "Sucssfully" });
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("GetAllByUser")]
+        [Authorize]
+
+        public async Task<IActionResult> GetAllWebsit()
         {
-            var data = await _service.GetByIdAsync(id);
-            return data == null ? NotFound() : Ok(data);
+            var email = User.FindFirstValue(ClaimTypes.Email)
+                ?? User.FindFirstValue(JwtRegisteredClaimNames.Email);
+            try
+            {
+                var results = await _createWebsiteService.GetAllForUser(email!);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("DeleteWebsite/{id}")]
+        [Authorize]
+
+        public async Task<IActionResult> DeleteWebsite(int id)
         {
-            var ok = await _service.DeleteAsync(id);
-            return ok ? Ok() : NotFound();
+            var email = User.FindFirstValue(ClaimTypes.Email)
+                ?? User.FindFirstValue(JwtRegisteredClaimNames.Email);
+            try
+            {
+                var results = await _createWebsiteService.DeleteWebsite(email!, id);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpGet("GetPage/{websiteurl}/{pageurl}")]
+        public async Task<IActionResult> GetPage(string websiteurl, string pageurl)
+        {
+            var results = _createWebsiteService.GetPageToUser(websiteurl, pageurl);
+            return Ok(results);
         }
     }
-
 }

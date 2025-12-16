@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.8",
+          "Project.Application": "1.0.0",
           "Project.Domain": "1.0.0",
           "Project.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
@@ -1542,6 +1543,7 @@
       },
       "Project.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.19"
         },
         "runtime": {

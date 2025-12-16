@@ -1,5 +1,59 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\7d78e1d9-ba5f-455d-8a66-806f01f844be.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.api</BasePath>
+      <RelativePath>images/7d78e1d9-ba5f-455d-8a66-806f01f844be.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ktxbknhysd</Fingerprint>
+      <Integrity>+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\7d78e1d9-ba5f-455d-8a66-806f01f844be.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.api</BasePath>
+      <RelativePath>images/b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ktxbknhysd</Fingerprint>
+      <Integrity>+F9SkDWgEfpFBBWAaFcOst3nhp5JiDM7W420CGVqtLA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b6345d1f-0f68-49a5-bfa9-bbc771ae0c29.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.api</BasePath>
+      <RelativePath>images/d98ea51a-87e6-4162-9b09-56e4d29bde9c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9km1dk1ld1</Fingerprint>
+      <Integrity>eXVeFLY3PAUhlprVO2Huv9KYhFwtYWSZQ4oynhwdNJE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d98ea51a-87e6-4162-9b09-56e4d29bde9c.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\web.config'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.api</SourceId>

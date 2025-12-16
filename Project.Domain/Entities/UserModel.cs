@@ -9,10 +9,10 @@ namespace Project.Domain.Entities
         public string? ImageUrl { get; set; }
         public UserType Role { get; set; } = UserType.User;
         public bool IsActive { get; set; } = true;
-        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
-        public DateTime? LastLogin { get; set; }
 
-
+        public bool IsBlock { get; set; } = false;
+        public DateTime DateCreated { get; set; } = DateTime.Now;
+        public DateTime? LoginTime { get; set; }
 
         public ICollection<Websites>? Websites { get; set; }
 

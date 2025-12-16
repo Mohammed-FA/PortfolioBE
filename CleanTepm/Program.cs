@@ -26,16 +26,27 @@ namespace CleanTepm
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler =
+                        System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                });
 
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll",
-                    builder => builder.AllowAnyOrigin()
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
+                options.AddPolicy("AllowFrontend", policy =>
+                {
+                    policy
+                        .WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
             });
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -151,8 +162,8 @@ namespace CleanTepm
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            app.UseCors("AllowFrontend");
 
-            app.UseCors("AllowAll");
 
 
             app.UseAuthentication();
@@ -166,11 +177,9 @@ namespace CleanTepm
             {
                 services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>(), typeof(Program));
 
-                builder.Services.AddScoped<IWebsiteService, WebsiteService>();
-                builder.Services.AddScoped<IPageService, PageService>();
-                builder.Services.AddScoped<ISectionService, SectionService>();
-
                 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+                services.AddScoped<CreateWebsitServer>();
+
 
                 services.AddScoped<EmailSenderService>();
 

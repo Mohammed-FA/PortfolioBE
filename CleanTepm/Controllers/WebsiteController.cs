@@ -37,7 +37,7 @@ namespace Project.api.Controllers
 
         [HttpPost("CreateWebsite")]
         [Authorize]
-        public async Task<IActionResult> CreateWebsite([FromForm] CreateWebsiteRequest request)
+        public async Task<IActionResult> CreateWebsite([FromBody] CreateWebsiteRequest request)
         {
             if (request.Pages == null || request.Pages.Count == 0)
                 return BadRequest("The Websit should have at less on page ");

@@ -190,17 +190,215 @@ namespace Project.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("AlignContent")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                    b.Property<string>("AlignItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundRepeat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BackgroundSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Border")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderBottom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderRadius")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BorderStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BorderTop")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BorderWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Bottom")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BoxShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cursor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Display")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FlexDirection")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FontSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FontStyle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FontWeight")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Gap")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GridTemplateColumns")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GridTemplateRows")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Href")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JustifyContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JustifyItems")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Left")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LetterSpacing")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("LineHeight")
+                        .HasColumnType("real");
+
+                    b.Property<string>("LinkType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Margin")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MarginMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MarginRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MarginTop")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinHeight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinWidth")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Opacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Overflow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowWrap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowX")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverflowY")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Padding")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingLeft")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaddingMode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PaddingRight")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PaddingTop")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Right")
+                        .HasColumnType("int");
 
                     b.Property<int>("SlotsId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Target")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextAlign")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextDecoration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TextShadow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Top")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transform")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Transition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WhiteSpace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Width")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ZIndex")
+                        .HasColumnType("int");
 
                     b.Property<string>("label")
                         .HasColumnType("nvarchar(max)");
@@ -487,6 +685,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("AlignItems")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("Autoplay")
+                        .HasColumnType("bit");
+
                     b.Property<string>("BackgroundColor")
                         .HasColumnType("nvarchar(max)");
 
@@ -538,6 +739,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("Controls")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Cursor")
                         .HasColumnType("nvarchar(max)");
 
@@ -574,6 +778,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("Href")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IconName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("JustifyContent")
                         .HasColumnType("nvarchar(max)");
 
@@ -591,6 +798,15 @@ namespace Project.Infrastructure.Migrations
 
                     b.Property<float?>("LineHeight")
                         .HasColumnType("real");
+
+                    b.Property<string>("LinkType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ListStyleType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Loop")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("Margin")
                         .HasColumnType("int");
@@ -622,8 +838,14 @@ namespace Project.Infrastructure.Migrations
                     b.Property<int?>("MinWidth")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("Muted")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("Opacity")
                         .HasColumnType("int");
+
+                    b.Property<string>("Orientation")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Overflow")
                         .HasColumnType("nvarchar(max)");
@@ -655,11 +877,20 @@ namespace Project.Infrastructure.Migrations
                     b.Property<int?>("PaddingTop")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("PlaybackRate")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Poster")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Right")
                         .HasColumnType("int");
+
+                    b.Property<string>("Target")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TextAlign")
                         .HasColumnType("nvarchar(max)");
@@ -670,6 +901,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("TextShadow")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Thickness")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Top")
                         .HasColumnType("int");
 
@@ -679,8 +913,14 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("Transition")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Volume")
+                        .HasColumnType("float");
 
                     b.Property<string>("WhiteSpace")
                         .HasColumnType("nvarchar(max)");
@@ -689,9 +929,6 @@ namespace Project.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("ZIndex")
-                        .HasColumnType("int");
-
-                    b.Property<int>("type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

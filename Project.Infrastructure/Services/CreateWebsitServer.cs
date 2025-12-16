@@ -33,6 +33,14 @@ namespace Project.Infrastructure.Services
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null) return false;
 
+            var exists = await _context.Websites
+                .AnyAsync(w => w.UserId == user.Id && w.Name != null && w.Name.ToLower() == name.ToLower());
+
+            if (exists)
+            {
+                return false;
+            }
+
             var website = new Websites
             {
                 UserId = user.Id,
@@ -50,12 +58,31 @@ namespace Project.Infrastructure.Services
                         {
                             Slots = c.Slots?.Select(sl => new Slots
                             {
-                                type = sl.type,
+                                Type = sl.Type,
+                                Url = sl.Url,
                                 Label = sl.Label,
                                 Content = sl.Content,
+                                Href = sl.Href,
+                                ListStyleType = sl.ListStyleType,
+                                LinkType = sl.LinkType,
+                                Target = sl.Target,
+                                Orientation = sl.Orientation,
+                                Thickness = sl.Thickness,
+                                IconName = sl.IconName,
+                                Poster = sl.Poster,
+                                Volume = sl.Volume,
+                                PlaybackRate = sl.PlaybackRate,
+                                Controls = sl.Controls,
+                                Muted = sl.Muted,
+                                Loop = sl.Loop,
+                                Autoplay = sl.Autoplay,
                                 Items = sl.Items?.Select(i => new ListItems
                                 {
-                                    label = i.label
+                                    label = i.label,
+                                    IconName = i.IconName,
+                                    Href = i.Href,
+                                    LinkType = i.LinkType,
+                                    Target = i.Target
                                 }).ToList()
                             }).ToList()
                         }).ToList()
@@ -68,6 +95,7 @@ namespace Project.Infrastructure.Services
 
             return true;
         }
+
 
 
         public async Task<List<WebsitDto>> GetAllForUser(string email)

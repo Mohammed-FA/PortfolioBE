@@ -46,49 +46,16 @@ namespace Project.Infrastructure.Services
                 UserId = user.Id,
                 Name = name,
                 IsPublish = true,
-                HostUrl = $"{name}",
+                HostUrl = name,
                 Pages = pages.Select(p => new PageModel
                 {
+                    Id = 0,
                     Name = p.Name,
                     Url = $"/{p.Name}",
-                    Sections = p.Sections?.Select(s => new SectionModel
-                    {
-                        Type = s.Type,
-                        Columns = s.Columns?.Select(c => new Columns
-                        {
-                            Slots = c.Slots?.Select(sl => new Slots
-                            {
-                                Type = sl.Type,
-                                Url = sl.Url,
-                                Label = sl.Label,
-                                Content = sl.Content,
-                                Href = sl.Href,
-                                ListStyleType = sl.ListStyleType,
-                                LinkType = sl.LinkType,
-                                Target = sl.Target,
-                                Orientation = sl.Orientation,
-                                Thickness = sl.Thickness,
-                                IconName = sl.IconName,
-                                Poster = sl.Poster,
-                                Volume = sl.Volume,
-                                PlaybackRate = sl.PlaybackRate,
-                                Controls = sl.Controls,
-                                Muted = sl.Muted,
-                                Loop = sl.Loop,
-                                Autoplay = sl.Autoplay,
-                                Items = sl.Items?.Select(i => new ListItems
-                                {
-                                    label = i.label,
-                                    IconName = i.IconName,
-                                    Href = i.Href,
-                                    LinkType = i.LinkType,
-                                    Target = i.Target
-                                }).ToList()
-                            }).ToList()
-                        }).ToList()
-                    }).ToList()
+                    Sections = p.Sections?.Select(s => CloneSectionWithZeroId(s)).ToList()
                 }).ToList()
             };
+
 
             _context.Websites.Add(website);
             await _context.SaveChangesAsync();
@@ -96,7 +63,114 @@ namespace Project.Infrastructure.Services
             return true;
         }
 
+        public static Slots CloneWithZeroId(Slots source)
+        {
+            if (source == null) return null;
 
+            var clone = new Slots { Id = 0 };
+
+            var props = typeof(Slots).GetProperties()
+                .Where(p => p.CanRead && p.CanWrite && p.Name != "Id");
+
+            foreach (var prop in props)
+            {
+                var value = prop.GetValue(source);
+
+                // Clone nested Items
+                if (prop.Name == "Items" && value is ICollection<ListItems> items)
+                {
+                    clone.Items = items.Select(i => CloneListItemWithZeroId(i)).ToList();
+                }
+                else
+                {
+                    prop.SetValue(clone, value);
+                }
+            }
+
+            return clone;
+        }
+
+        public static ListItems CloneListItemWithZeroId(ListItems source)
+        {
+            if (source == null) return null;
+
+            var clone = new ListItems { Id = 0 };
+
+            var props = typeof(ListItems).GetProperties()
+                .Where(p => p.CanRead && p.CanWrite && p.Name != "Id");
+
+            foreach (var prop in props)
+            {
+                prop.SetValue(clone, prop.GetValue(source));
+            }
+
+            return clone;
+        }
+        public static Columns CloneColumnWithZeroId(Columns source)
+        {
+            if (source == null) return null;
+
+            var clone = new Columns { Id = 0 };
+
+            var props = typeof(Columns).GetProperties()
+                .Where(p => p.CanRead && p.CanWrite && p.Name != "Id");
+
+            foreach (var prop in props)
+            {
+                var value = prop.GetValue(source);
+
+                if (prop.Name == "Slots" && value is ICollection<Slots> slots)
+                {
+                    clone.Slots = slots.Select(s => CloneWithZeroId(s)).ToList();
+                }
+                else
+                {
+                    prop.SetValue(clone, value);
+                }
+            }
+
+            return clone;
+        }
+
+        public static SectionModel CloneSectionWithZeroId(SectionModel source)
+        {
+            if (source == null) return null;
+
+            var clone = new SectionModel { Id = 0 };
+
+            var props = typeof(SectionModel).GetProperties()
+                .Where(p => p.CanRead && p.CanWrite && p.Name != "Id");
+
+            foreach (var prop in props)
+            {
+                var value = prop.GetValue(source);
+
+                if (prop.Name == "Columns" && value is ICollection<Columns> columns)
+                {
+                    clone.Columns = columns.Select(c => CloneColumnWithZeroId(c)).ToList();
+                }
+                else
+                {
+                    prop.SetValue(clone, value);
+                }
+            }
+
+            return clone;
+        }
+
+        public Websites? GetWebsiteById(int id)
+        {
+
+            var results = _context.Websites
+                .Include(p => p.Pages)!
+                .ThenInclude(s => s.Sections)!
+                .ThenInclude(c => c.Columns)!
+                .ThenInclude(s => s.Slots)
+                .FirstOrDefault(item => item.Id == id)
+                ;
+
+            return results;
+        }
 
         public async Task<List<WebsitDto>> GetAllForUser(string email)
         {

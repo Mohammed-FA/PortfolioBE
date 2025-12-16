@@ -170,14 +170,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Pages",
-        "Type": "System.Collections.Generic.List\u00601[[Project.Domain.Entities.PageModel, Project.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "Project.Application.Dto.CreateWebsiteRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -224,6 +219,22 @@
       {
         "Name": "pageurl",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.api.Controllers.WebsiteController",
+    "Method": "GetWebsiteByID",
+    "RelativePath": "api/Website/GetWebsiteById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

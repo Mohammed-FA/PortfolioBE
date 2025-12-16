@@ -95,9 +95,22 @@ namespace Project.api.Controllers
         }
 
         [HttpGet("GetPage/{websiteurl}/{pageurl}")]
-        public async Task<IActionResult> GetPage(string websiteurl, string pageurl)
+        public IActionResult GetPage(string websiteurl, string pageurl)
         {
             var results = _createWebsiteService.GetPageToUser(websiteurl, pageurl);
+            return Ok(results);
+        }
+
+        [HttpGet("GetWebsiteById/{id}")]
+        public IActionResult GetWebsiteByID(int id)
+        {
+            var results = _createWebsiteService.GetWebsiteById(id);
+
+            if (results == null)
+            {
+                return NotFound(new { message = $"Website with ID {id} not found." });
+            }
+
             return Ok(results);
         }
     }

@@ -54,19 +54,48 @@ namespace Project.api.Controllers
 
 
         [HttpGet("getallusers")]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery] UserQueryParams query)
         {
-            //var email = User.FindFirstValue(ClaimTypes.Email)
-            //?? User.FindFirstValue(JwtRegisteredClaimNames.Email);
+            var usersQuery = _userManager.Users
+                .Include(u => u.Websites)
+                .AsQueryable();
 
-            //var user = _userManager.FindByEmailAsync(email);
-            var users = await _userManager.Users
-                .Include(w => w.Websites)
+            if (!string.IsNullOrWhiteSpace(query.Search))
+            {
+                usersQuery = usersQuery.Where(u =>
+                    u.Email!.Contains(query.Search) ||
+                    u.UserName!.Contains(query.Search)
+                );
+            }
+
+            if (query.Type is not null)
+            {
+                usersQuery = usersQuery.Where(u => u.Role == query.Type);
+            }
+
+            if (query.ShowBlock == 2 || query.ShowBlock == 3)
+            {
+                usersQuery = usersQuery.Where(u => query.ShowBlock == 2 ? u.IsBlock : !u.IsBlock);
+            }
+            var totalCount = await usersQuery.CountAsync();
+
+            var users = await usersQuery
+                .Skip((query.Page - 1) * query.PageSize)
+                .Take(query.PageSize)
                 .ToListAsync();
 
-            var results = _mapper.Map<List<UserDto>>(users);
-            return Ok(results);
+            var response = new PaginatedResult<UserDto>
+            {
+                Page = query.Page,
+                PageSize = query.PageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)query.PageSize),
+                Data = _mapper.Map<List<UserDto>>(users)
+            };
+
+            return Ok(response);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> ShowUserWebsit()
@@ -159,6 +188,24 @@ namespace Project.api.Controllers
             var user = _userManager.Users
               .Include(u => u.Websites.Where(w => !w.IsDeleted))
                 .FirstOrDefault(item => item.Id == userId);
+
+            var results = _mapper.Map<UserDto>(user);
+            return Ok(results);
+        }
+
+
+        [HttpDelete("BlockUser/{userId}")]
+        public IActionResult BlockUser(long userId, bool isBlock = true)
+        {
+            var user = _userManager.Users
+                .FirstOrDefault(item => item.Id == userId);
+            if (user == null)
+                throw new Exception("User not found");
+
+            user.IsBlock = isBlock;
+
+            _context.Update(user);
+            _context.SaveChanges();
 
             var results = _mapper.Map<UserDto>(user);
             return Ok(results);

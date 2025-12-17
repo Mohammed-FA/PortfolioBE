@@ -28,40 +28,74 @@ namespace Project.Infrastructure.Services
             _environment = environment;
         }
 
-        public async Task<bool> CreateWebsiteWithPages(string name, string email, List<PageModel> pages)
+        public async Task<bool> UpsertWebsiteWithPages(string name, string email, List<PageModel> pages, long? websiteId = null)
         {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null) return false;
 
             var exists = await _context.Websites
-                .AnyAsync(w => w.UserId == user.Id && w.Name != null && w.Name.ToLower() == name.ToLower());
+                .AnyAsync(w => w.UserId == user.Id && w.Name != null
+                               && w.Name.ToLower() == name.ToLower()
+                               && (!websiteId.HasValue || w.Id != websiteId.Value));
 
             if (exists)
             {
                 return false;
             }
 
-            var website = new Websites
+            Websites website;
+
+            if (websiteId.HasValue)
             {
-                UserId = user.Id,
-                Name = name,
-                IsPublish = true,
-                HostUrl = name,
-                Pages = pages.Select(p => new PageModel
+                website = await _context.Websites
+                    .Include(w => w.Pages)
+                        .ThenInclude(p => p.Sections)
+                            .ThenInclude(s => s.Columns)
+                                .ThenInclude(c => c.Slots)
+                    .FirstOrDefaultAsync(w => w.Id == websiteId.Value && w.UserId == user.Id);
+
+                if (website == null) return false;
+
+
+                _context.Slots.RemoveRange(website.Pages.SelectMany(p => p.Sections)
+                                                       .SelectMany(s => s.Columns)
+                                                       .SelectMany(c => c.Slots));
+                _context.Columns.RemoveRange(website.Pages.SelectMany(p => p.Sections)
+                                                          .SelectMany(s => s.Columns));
+                _context.Sections.RemoveRange(website.Pages.SelectMany(p => p.Sections));
+                _context.Pages.RemoveRange(website.Pages);
+
+
+                website.Name = name;
+                website.HostUrl = name;
+                website.IsPublish = true;
+            }
+            else
+            {
+
+                website = new Websites
                 {
-                    Id = 0,
-                    Name = p.Name,
-                    Url = $"/{p.Name}",
-                    Sections = p.Sections?.Select(s => CloneSectionWithZeroId(s)).ToList()
-                }).ToList()
-            };
+                    UserId = user.Id,
+                    Name = name,
+                    HostUrl = name,
+                    IsPublish = true
+                };
+                _context.Websites.Add(website);
+            }
 
 
-            _context.Websites.Add(website);
+            website.Pages = pages.Select(p => new PageModel
+            {
+                Id = 0,
+                Name = p.Name,
+                Url = $"/{p.Name}",
+                Sections = p.Sections?.Select(s => CloneSectionWithZeroId(s)).ToList()
+            }).ToList();
+
             await _context.SaveChangesAsync();
-
             return true;
         }
+
 
         public static Slots CloneWithZeroId(Slots source)
         {

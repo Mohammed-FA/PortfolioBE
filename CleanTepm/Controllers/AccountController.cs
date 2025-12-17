@@ -142,6 +142,10 @@ namespace CleanTepm.Controllers
                     var results = await _signInManager.PasswordSignInAsync(user, model.Password!, model.Rememberme ?? false, false);
                     if (results.Succeeded)
                     {
+                        if (user.IsBlock)
+                        {
+                            return BadRequest("This user is blocked and cannot perform this action.");
+                        }
                         user.LoginTime = DateTime.Now;
                         _context.Update(user);
                         await _context.SaveChangesAsync();

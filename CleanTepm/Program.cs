@@ -1,4 +1,4 @@
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -107,7 +107,7 @@ namespace CleanTepm
             builder.Services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("publicConnectionString")));
 
 
             builder.Services.AddAuthorization(options =>
@@ -162,6 +162,9 @@ namespace CleanTepm
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            app.UseRouting();
+
+
             app.UseCors("AllowFrontend");
 
 

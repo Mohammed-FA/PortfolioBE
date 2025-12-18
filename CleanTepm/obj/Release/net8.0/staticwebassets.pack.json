@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\2b8edf0e-24b1-48f0-af4f-05fa085dd4dc.png",
+      "PackagePath": "staticwebassets\\images\\2b8edf0e-24b1-48f0-af4f-05fa085dd4dc.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\63078a48-27aa-48cd-bbbd-cd16dde1b3fb.png",
+      "PackagePath": "staticwebassets\\images\\63078a48-27aa-48cd-bbbd-cd16dde1b3fb.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png",
+      "PackagePath": "staticwebassets\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png",
+      "PackagePath": "staticwebassets\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png"
+    },
+    {
+      "Id": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\ffa6d52d-d72a-4a47-b15f-67988d71f61d.png",
+      "PackagePath": "staticwebassets\\images\\ffa6d52d-d72a-4a47-b15f-67988d71f61d.png"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Project.api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Project.api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Project.api.props",
+      "PackagePath": "build\\Project.api.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Project.api.props",
+      "PackagePath": "buildMultiTargeting\\Project.api.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Project.api.props",
+      "PackagePath": "buildTransitive\\Project.api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

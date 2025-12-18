@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GitHubWork\\PortfolioBE\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +39,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T13:04:29.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Program.cs",
+              "RelativeDocumentMoniker": "CleanTepm\\Program.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Program.cs*",
+              "RelativeToolTip": "CleanTepm\\Program.cs*",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwG0AAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T13:04:22.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json",
+              "RelativeDocumentMoniker": "CleanTepm\\appsettings.json",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json*",
+              "RelativeToolTip": "CleanTepm\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T13:00:52.244Z",
+              "EditorCaption": ""
             }
           ]
         },

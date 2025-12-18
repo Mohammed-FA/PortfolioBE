@@ -103,9 +103,9 @@ namespace Project.api.Controllers
         }
 
         [HttpGet("GetWebsiteById/{id}")]
-        public IActionResult GetWebsiteByID(int id)
+        public IActionResult GetWebsiteByID(int id, [FromQuery] string? websiteName)
         {
-            var results = _createWebsiteService.GetWebsiteById(id);
+            var results = _createWebsiteService.GetWebsiteById(id, websiteName);
 
             if (results == null)
             {

@@ -30,6 +30,7 @@ namespace Project.Infrastructure.Services
 
         public async Task<bool> CreateWebsiteWithPages(string name, string email, List<PageModel> pages, int? websiteId = null)
         {
+            name = name.Trim().Replace(" ", "-");
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null) return false;
 

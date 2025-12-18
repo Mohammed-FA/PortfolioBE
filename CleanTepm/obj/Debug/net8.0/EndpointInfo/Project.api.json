@@ -510,7 +510,7 @@
         }
       }
     },
-    "/api/Website/GetWebsiteById/{id}": {
+    "/api/Website/GetWebsiteById": {
       "get": {
         "tags": [
           "Website"
@@ -518,11 +518,18 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "name": "websiteName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
             }
           }
         ],

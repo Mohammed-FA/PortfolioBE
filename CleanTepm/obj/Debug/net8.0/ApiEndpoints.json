@@ -274,7 +274,7 @@
   {
     "ContainingType": "Project.api.Controllers.WebsiteController",
     "Method": "GetWebsiteByID",
-    "RelativePath": "api/Website/GetWebsiteById/{id}",
+    "RelativePath": "api/Website/GetWebsiteById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -282,7 +282,12 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
+      },
+      {
+        "Name": "websiteName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

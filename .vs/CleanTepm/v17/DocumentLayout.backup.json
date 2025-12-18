@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
               "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
               "RelativeToolTip": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAtwMMAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAhwNAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T13:06:31.085Z",
               "EditorCaption": ""
@@ -86,7 +86,7 @@
               "RelativeDocumentMoniker": "CleanTepm\\Controllers\\WebsiteController.cs",
               "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
               "RelativeToolTip": "CleanTepm\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAhwGkAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAwHMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T13:04:42.745Z",
               "EditorCaption": ""
@@ -101,8 +101,7 @@
               "RelativeToolTip": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:04:29.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T13:04:29.347Z"
             },
             {
               "$type": "Document",
@@ -114,8 +113,7 @@
               "RelativeToolTip": "CleanTepm\\Program.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAQwG0AAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:04:22.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T13:04:22.446Z"
             },
             {
               "$type": "Document",
@@ -127,8 +125,7 @@
               "RelativeToolTip": "CleanTepm\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-18T13:00:52.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T13:00:52.244Z"
             }
           ]
         },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zhD3914SZrYNLb7/8gjEwJAgjIO9Xz/MoGiGPM4wtj4=",
+  "Hash": "FyNp1/QlQXOCjP4FrQuAZ1rSvES/4EBwOgldpENxkIQ=",
   "Source": "Project.api",
   "BasePath": "_content/Project.api",
   "Mode": "Default",
@@ -15,6 +15,214 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png",
+      "SourceId": "Project.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "RelativePath": "images/898af69a-2a84-484f-8686-f9b43f7e38ba#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f9ecshaqtg",
+      "Integrity": "M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png"
+    },
+    {
+      "Identity": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png",
+      "SourceId": "Project.api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "RelativePath": "images/f85dd1c4-2777-4daf-a69c-c86ed19ec034#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f9ecshaqtg",
+      "Integrity": "M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/898af69a-2a84-484f-8686-f9b43f7e38ba.f9ecshaqtg.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26013"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Dec 2025 13:05:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f9ecshaqtg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/898af69a-2a84-484f-8686-f9b43f7e38ba.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/898af69a-2a84-484f-8686-f9b43f7e38ba.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\898af69a-2a84-484f-8686-f9b43f7e38ba.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26013"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Dec 2025 13:05:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/f85dd1c4-2777-4daf-a69c-c86ed19ec034.f9ecshaqtg.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26013"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Dec 2025 13:07:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f9ecshaqtg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/f85dd1c4-2777-4daf-a69c-c86ed19ec034.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/f85dd1c4-2777-4daf-a69c-c86ed19ec034.png",
+      "AssetFile": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\images\\f85dd1c4-2777-4daf-a69c-c86ed19ec034.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26013"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Dec 2025 13:07:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-M3MRMlGvEUYJ6pOP4lJ/Ynt1KvSAOtcZupSBBJzwXgE="
+        }
+      ]
+    }
+  ]
 }

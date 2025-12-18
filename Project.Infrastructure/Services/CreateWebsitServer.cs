@@ -195,17 +195,20 @@ namespace Project.Infrastructure.Services
 
         public Websites? GetWebsiteById(int id, string websiteName = "")
         {
-
             var results = _context.Websites
                 .Include(p => p.Pages)!
-                .ThenInclude(s => s.Sections)!
-                .ThenInclude(c => c.Columns)!
-                .ThenInclude(s => s.Slots)
-                .FirstOrDefault(item => item.Id == id || item.Name.ToLower() == websiteName.ToLower())
-                ;
+                    .ThenInclude(s => s.Sections)!
+                        .ThenInclude(c => c.Columns)!
+                            .ThenInclude(s => s.Slots)
+                .FirstOrDefault(item =>
+                    item.Id == id ||
+                    (!string.IsNullOrWhiteSpace(websiteName) &&
+                     item.Name.ToLower() == websiteName.ToLower())
+                );
 
             return results;
         }
+
 
         public async Task<List<WebsitDto>> GetAllForUser(string email)
         {

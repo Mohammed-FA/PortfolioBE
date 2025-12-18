@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
               "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
               "RelativeToolTip": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAIA2wMcAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAhwMYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T13:06:31.085Z",
               "EditorCaption": ""
@@ -75,7 +75,8 @@
               "RelativeToolTip": "CleanTepm\\Controllers\\AdminController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:04:42.718Z"
+              "WhenOpened": "2025-12-18T13:04:42.718Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -85,7 +86,7 @@
               "RelativeDocumentMoniker": "CleanTepm\\Controllers\\WebsiteController.cs",
               "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
               "RelativeToolTip": "CleanTepm\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAgwG4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAIAzwC8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T13:04:42.745Z",
               "EditorCaption": ""

@@ -193,7 +193,7 @@ namespace Project.Infrastructure.Services
             return clone;
         }
 
-        public Websites? GetWebsiteById(int id, string? websiteName = null)
+        public Websites? GetWebsiteById(int id, string websiteName = "")
         {
 
             var results = _context.Websites
@@ -201,7 +201,7 @@ namespace Project.Infrastructure.Services
                 .ThenInclude(s => s.Sections)!
                 .ThenInclude(c => c.Columns)!
                 .ThenInclude(s => s.Slots)
-                .FirstOrDefault(item => item.Id == id || item.Name == websiteName)
+                .FirstOrDefault(item => item.Id == id || item.Name.ToLower() == websiteName.ToLower())
                 ;
 
             return results;

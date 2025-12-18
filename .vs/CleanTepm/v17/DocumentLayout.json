@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\GitHubWork\\PortfolioBE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|d:\\githubwork\\portfoliobe\\cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ABC9BC62-8189-43E7-B6A0-05D56E5BF300}|CleanTepm\\Project.api.csproj|solutionrelative:cleantepm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|d:\\githubwork\\portfoliobe\\project.infrastructure\\services\\createwebsitserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CFB78E1-E45F-4CB1-9DA5-ADA025ED8AFB}|Project.Infrastructure\\Project.Infrastructure.csproj|solutionrelative:project.infrastructure\\services\\createwebsitserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateWebsitServer.cs",
-              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "RelativeDocumentMoniker": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "RelativeToolTip": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:39:25.027Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -55,7 +50,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "Project.Infrastructure\\Data\\SeedData.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Data\\SeedData.cs",
+              "RelativeToolTip": "Project.Infrastructure\\Data\\SeedData.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T15:53:17.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json",
+              "RelativeDocumentMoniker": "CleanTepm\\appsettings.json",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\appsettings.json",
+              "RelativeToolTip": "CleanTepm\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T15:53:11.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateWebsitServer.cs",
+              "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "RelativeDocumentMoniker": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "ToolTip": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "RelativeToolTip": "Project.Infrastructure\\Services\\CreateWebsitServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T13:39:25.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContextFactory.cs",
               "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\Project.Infrastructure\\ApplicationDbContextFactory.cs",
               "RelativeDocumentMoniker": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
@@ -63,12 +97,11 @@
               "RelativeToolTip": "Project.Infrastructure\\ApplicationDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:39:22.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T13:39:22.308Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "WebsiteController.cs",
               "DocumentMoniker": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\Controllers\\WebsiteController.cs",
               "RelativeDocumentMoniker": "CleanTepm\\Controllers\\WebsiteController.cs",
@@ -76,8 +109,7 @@
               "RelativeToolTip": "CleanTepm\\Controllers\\WebsiteController.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAASwFIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T13:34:37.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T13:34:37.389Z"
             }
           ]
         },

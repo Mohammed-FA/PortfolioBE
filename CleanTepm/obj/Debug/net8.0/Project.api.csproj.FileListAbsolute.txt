@@ -200,10 +200,10 @@ D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets\msbuild.bui
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Project.api.props
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Project.api.props
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets.pack.json
-D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\Project..254A2B3A.Up2Date
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\Project.api.dll
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\refint\Project.api.dll
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\Project.api.pdb
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\Project.api.genruntimeconfig.cache
 D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\ref\Project.api.dll
+D:\GitHubWork\PortfolioBE\CleanTepm\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

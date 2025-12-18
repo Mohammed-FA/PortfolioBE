@@ -38,6 +38,7 @@ namespace Project.Infrastructure.Services
                                && w.Name.ToLower() == name.ToLower()
                                && (!websiteId.HasValue || w.Id != websiteId.Value));
 
+
             if (exists)
             {
                 return false;
@@ -65,7 +66,7 @@ namespace Project.Infrastructure.Services
                 _context.Sections.RemoveRange(website.Pages.SelectMany(p => p.Sections));
                 _context.Pages.RemoveRange(website.Pages);
 
-
+                await _context.SaveChangesAsync();
                 website.Name = name;
                 website.HostUrl = name;
                 website.IsPublish = true;

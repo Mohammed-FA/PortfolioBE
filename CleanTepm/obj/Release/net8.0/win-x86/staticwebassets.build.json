@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "zhD3914SZrYNLb7/8gjEwJAgjIO9Xz/MoGiGPM4wtj4=",
+  "Source": "Project.api",
+  "BasePath": "_content/Project.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Project.api\\wwwroot",
+      "Source": "Project.api",
+      "ContentRoot": "D:\\GitHubWork\\PortfolioBE\\CleanTepm\\wwwroot\\",
+      "BasePath": "_content/Project.api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

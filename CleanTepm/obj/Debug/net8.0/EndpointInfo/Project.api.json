@@ -881,6 +881,11 @@
               "$ref": "#/components/schemas/PageModel"
             },
             "nullable": true
+          },
+          "websieId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false

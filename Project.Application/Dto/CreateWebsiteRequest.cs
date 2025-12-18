@@ -7,5 +7,6 @@ namespace Project.Application.Dto
 
         public string Name { get; set; } = null!;
         public List<PageModel> Pages { get; set; }
+        public int? WebsieId { get; set; }
     }
 }

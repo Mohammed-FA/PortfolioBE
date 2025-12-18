@@ -28,7 +28,7 @@ namespace Project.Infrastructure.Services
             _environment = environment;
         }
 
-        public async Task<bool> UpsertWebsiteWithPages(string name, string email, List<PageModel> pages, long? websiteId = null)
+        public async Task<bool> CreateWebsiteWithPages(string name, string email, List<PageModel> pages, int? websiteId = null)
         {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null) return false;
@@ -45,7 +45,7 @@ namespace Project.Infrastructure.Services
 
             Websites website;
 
-            if (websiteId.HasValue)
+            if (websiteId != 0)
             {
                 website = await _context.Websites
                     .Include(w => w.Pages)
@@ -218,6 +218,7 @@ namespace Project.Infrastructure.Services
 
             var websites = await _context.Websites
                 .Include(p => p.Pages)
+                .OrderByDescending(item => item.Id)
                 .Where(item => item.UserId == user.Id && item.IsDeleted == false)
                 .ToListAsync();
             return _mapper.Map<List<WebsitDto>>(websites);
@@ -231,7 +232,8 @@ namespace Project.Infrastructure.Services
                 .Include(s => s.Sections)!
                 .ThenInclude(c => c.Columns)!
                 .ThenInclude(s => s.Slots)
-                .FirstOrDefault(p => p.websites!.Name == HostUrl && p.Name == pageurl);
+                .FirstOrDefault(p => p.websites!.Name == HostUrl && p.Name == pageurl)
+                ;
 
 
             return results;

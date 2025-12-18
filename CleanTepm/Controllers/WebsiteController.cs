@@ -48,7 +48,8 @@ namespace Project.api.Controllers
             var result = await _createWebsiteService.CreateWebsiteWithPages(
                 request.Name,
                 email!,
-                request.Pages
+                request.Pages,
+                request.WebsieId
             );
 
             if (!result) return BadRequest("There is somthing be error ");

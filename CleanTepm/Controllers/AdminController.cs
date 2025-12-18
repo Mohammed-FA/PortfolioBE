@@ -102,7 +102,6 @@ namespace Project.api.Controllers
         {
 
             var users = await _userManager.Users
-
                 .Include(w => w.Websites)
                 .ToListAsync();
 
@@ -187,6 +186,8 @@ namespace Project.api.Controllers
         {
             var user = _userManager.Users
               .Include(u => u.Websites.Where(w => !w.IsDeleted))
+                .ThenInclude(w => w.Pages)
+
                 .FirstOrDefault(item => item.Id == userId);
 
             var results = _mapper.Map<UserDto>(user);
